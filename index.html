@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phelippe Fernandes | Corretor Imobiliário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Phelippe Fernandes Corretor Imobiliário">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#imoveis">Imóveis</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="admin.html" class="btn-admin">Área Administrativa</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Imóveis de Alto Padrão em Indaiatuba</h1>
+                <p>Compra, venda, aluguel e administração de imóveis premium</p>
+                <a href="#imoveis" class="btn-primary">Ver Imóveis</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <h2>Encontre seu Imóvel Ideal</h2>
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo">
+                            <option value="todos">Todos</option>
+                            <option value="casa">Casa</option>
+                            <option value="sobrado">Sobrado</option>
+                            <option value="comercial">Comercial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="negocio">Negócio</label>
+                        <select id="negocio">
+                            <option value="todos">Todos</option>
+                            <option value="venda">Venda</option>
+                            <option value="aluguel">Aluguel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dormitorios">Dormitórios</label>
+                        <select id="dormitorios">
+                            <option value="todos">Todos</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Valor até</label>
+                        <select id="valor">
+                            <option value="todos">Todos</option>
+                            <option value="500000">R$ 500.000</option>
+                            <option value="1000000">R$ 1.000.000</option>
+                            <option value="2000000">R$ 2.000.000</option>
+                            <option value="3000000">R$ 3.000.000</option>
+                            <option value="5000000">R$ 5.000.000</option>
+                        </select>
+                    </div>
+                    <button id="btn-buscar" class="btn-search">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="imoveis-section" id="imoveis">
+        <div class="container">
+            <h2 class="section-title">Imóveis em Destaque</h2>
+            <div class="imoveis-filter">
+                <span>Ordenar por:</span>
+                <select id="ordenacao">
+                    <option value="recentes">Mais recentes</option>
+                    <option value="preco-asc">Menor preço</option>
+                    <option value="preco-desc">Maior preço</option>
+                    <option value="area-asc">Menor área</option>
+                    <option value="area-desc">Maior área</option>
+                </select>
+            </div>
+            <div class="imoveis-grid" id="imoveis-container">
+                <!-- Os imóveis serão carregados dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-section" id="sobre">
+        <div class="container">
+            <div class="sobre-content">
+                <div class="sobre-img">
+                    <img src="img/corretor.jpg" alt="Phelippe Fernandes - Corretor Imobiliário">
+                </div>
+                <div class="sobre-text">
+                    <h2 class="section-title">Sobre Phelippe Fernandes</h2>
+                    <h3>CRECI 301924F</h3>
+                    <p>Especialista em imóveis de alto padrão em Indaiatuba, com ampla experiência no mercado imobiliário local. Ofereço um atendimento personalizado e exclusivo para clientes que buscam propriedades premium.</p>
+                    <p>Trabalho com compra, venda, aluguel e administração de imóveis, sempre priorizando a satisfação dos clientes e a excelência no atendimento.</p>
+                    <p>Meu compromisso é encontrar o imóvel perfeito para você e sua família, ou garantir a melhor negociação para seu patrimônio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cidade-section">
+        <div class="container">
+            <h2 class="section-title">Indaiatuba - Uma cidade para viver bem</h2>
+            <div class="cidade-content">
+                <div class="cidade-img">
+                    <img src="img/parque_ecologico.jpg" alt="Parque Ecológico de Indaiatuba">
+                </div>
+                <div class="cidade-text">
+                    <p>Indaiatuba é uma das cidades com melhor qualidade de vida do interior paulista, combinando desenvolvimento econômico, infraestrutura urbana e áreas verdes preservadas.</p>
+                    <p>Com excelentes opções de lazer, gastronomia, educação e saúde, a cidade oferece tudo o que você e sua família precisam para viver com conforto e tranquilidade.</p>
+                    <p>Localizada estrategicamente próxima a Campinas e com fácil acesso a São Paulo, Indaiatuba é o lugar ideal para quem busca qualidade de vida sem abrir mão da praticidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contato-section" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contato-content">
+                <div class="contato-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Avenida Horst Frederico Joao Heer, 3875<br>Parque Campo Bonito - Indaiatuba<br>CEP: 13.348-059</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p><a href="tel:+5519989376201">(19) 98937-6201</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:phelippe.fernandes@creci.org.br">phelippe.fernandes@creci.org.br</a></p>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contato-form">
+                    <form id="form-contato">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="Phelippe Fernandes Corretor Imobiliário">
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#imoveis">Imóveis</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> (19) 98937-6201</p>
+                    <p><i class="fas fa-envelope"></i> phelippe.fernandes@creci.org.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Indaiatuba, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Phelippe Fernandes - Corretor Imobiliário - CRECI 301924F. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Template para os cards de imóveis -->
+    <template id="imovel-template">
+        <div class="imovel-card">
+            <div class="imovel-img">
+                <img src="" alt="">
+                <div class="imovel-tag"></div>
+            </div>
+            <div class="imovel-info">
+                <h3 class="imovel-titulo"></h3>
+                <p class="imovel-local"><i class="fas fa-map-marker-alt"></i> <span></span></p>
+                <div class="imovel-detalhes">
+                    <span><i class="fas fa-bed"></i> <span class="dormitorios"></span></span>
+                    <span><i class="fas fa-bath"></i> <span class="banheiros"></span></span>
+                    <span><i class="fas fa-car"></i> <span class="garagem"></span></span>
+                    <span><i class="fas fa-ruler-combined"></i> <span class="area"></span></span>
+                </div>
+                <div class="imovel-preco"></div>
+                <a href="#" class="btn-secondary ver-detalhes">Ver Detalhes</a>
+            </div>
+        </div>
+    </template>
+
+    <!-- Modal de detalhes do imóvel -->
+    <div class="modal" id="modal-imovel">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="main-image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumbnails">
+                        <!-- Miniaturas serão adicionadas dinamicamente -->
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2 class="modal-titulo"></h2>
+                    <p class="modal-local"><i class="fas fa-map-marker-alt"></i> <span></span></p>
+                    <div class="modal-preco"></div>
+                    <div class="modal-detalhes">
+                        <div class="detalhe-item">
+                            <i class="fas fa-bed"></i>
+                            <span>Dormitórios: </span>
+                            <span class="dormitorios"></span>
+                        </div>
+                        <div class="detalhe-item">
+                            <i class="fas fa-shower"></i>
+                            <span>Suítes: </span>
+                            <span class="suites"></span>
+                        </div>
+                        <div class="detalhe-item">
+                            <i class="fas fa-bath"></i>
+                            <span>Banheiros: </span>
+                            <span class="banheiros"></span>
+                        </div>
+                        <div class="detalhe-item">
+                            <i class="fas fa-car"></i>
+                            <span>Garagem: </span>
+                            <span class="garagem"></span>
+                        </div>
+                        <div class="detalhe-item">
+                            <i class="fas fa-ruler-combined"></i>
+                            <span>Área Construída: </span>
+                            <span class="area-construida"></span>
+                        </div>
+                        <div class="detalhe-item">
+                            <i class="fas fa-expand"></i>
+                            <span>Área do Terreno: </span>
+                            <span class="area-terreno"></span>
+                        </div>
+                    </div>
+                    <div class="modal-destaques">
+                        <h3>Destaques</h3>
+                        <ul class="destaques-lista">
+                            <!-- Destaques serão adicionados dinamicamente -->
+                        </ul>
+                    </div>
+                    <div class="modal-descricao">
+                        <h3>Descrição</h3>
+                        <p></p>
+                    </div>
+                    <div class="modal-contato">
+                        <a href="#contato" class="btn-primary">Entre em Contato</a>
+                        <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

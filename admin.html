@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | Phelippe Fernandes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Phelippe Fernandes Corretor Imobiliário">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Voltar ao Site</a></li>
+                    <li><a href="#" class="active">Painel Administrativo</a></li>
+                    <li><a href="#" id="btn-logout">Sair</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" class="active" data-section="dashboard">Dashboard</a></li>
+                <li><a href="#" data-section="imoveis">Gerenciar Imóveis</a></li>
+                <li><a href="#" data-section="adicionar">Adicionar Imóvel</a></li>
+                <li><a href="#" data-section="biografia">Editar Biografia</a></li>
+                <li><a href="#" data-section="mensagens">Mensagens</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Dashboard -->
+            <section id="dashboard" class="admin-section active">
+                <h2>Dashboard</h2>
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total de Imóveis</h3>
+                            <p>8</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>À Venda</h3>
+                            <p>8</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Para Aluguel</h3>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Mensagens</h3>
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Atividade Recente</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                            <div class="activity-info">
+                                <p>Novo imóvel adicionado: <strong>Sobrado 3 Dorm, Suíte, Terraço no Regent</strong></p>
+                                <span class="activity-time">Hoje, 10:30</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="activity-info">
+                                <p>Biografia atualizada</p>
+                                <span class="activity-time">Ontem, 15:45</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="activity-info">
+                                <p>Nova mensagem de <strong>João Silva</strong></p>
+                                <span class="activity-time">Ontem, 09:15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gerenciar Imóveis -->
+            <section id="imoveis" class="admin-section">
+                <h2>Gerenciar Imóveis</h2>
+                <div class="admin-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar imóvel...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <a href="#" class="btn-primary" data-section="adicionar">Adicionar Novo</a>
+                </div>
+
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Título</th>
+                                <th>Tipo</th>
+                                <th>Negócio</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="imoveis-table-body">
+                            <!-- Dados serão carregados dinamicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Adicionar Imóvel -->
+            <section id="adicionar" class="admin-section">
+                <h2>Adicionar Novo Imóvel</h2>
+                <form id="form-imovel" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="titulo">Título</label>
+                            <input type="text" id="titulo" name="titulo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="codigo">Código</label>
+                            <input type="text" id="codigo" name="codigo" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tipo">Tipo</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">Selecione</option>
+                                <option value="Casa">Casa</option>
+                                <option value="Sobrado">Sobrado</option>
+                                <option value="Apartamento">Apartamento</option>
+                                <option value="Comercial">Comercial</option>
+                                <option value="Terreno">Terreno</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="negocio">Negócio</label>
+                            <select id="negocio" name="negocio" required>
+                                <option value="">Selecione</option>
+                                <option value="Vende-se">Venda</option>
+                                <option value="Aluga-se">Aluguel</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="valor">Valor</label>
+                            <input type="text" id="valor" name="valor" placeholder="R$ 0,00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" name="cidade" value="Indaiatuba" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" id="bairro" name="bairro" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dormitorios">Dormitórios</label>
+                            <input type="number" id="dormitorios" name="dormitorios" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="suites">Suítes</label>
+                            <input type="number" id="suites" name="suites" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="banheiros">Banheiros</label>
+                            <input type="number" id="banheiros" name="banheiros" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="garagem">Vagas de Garagem</label>
+                            <input type="text" id="garagem" name="garagem" placeholder="Ex: 2 Vagas" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="area_terreno">Área do Terreno</label>
+                            <input type="text" id="area_terreno" name="area_terreno" placeholder="Ex: 150 m²" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="area_construida">Área Construída</label>
+                            <input type="text" id="area_construida" name="area_construida" placeholder="Ex: 120 m²" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="destaques">Destaques (separados por vírgula)</label>
+                            <input type="text" id="destaques" name="destaques" placeholder="Ex: Piscina, Churrasqueira, Jardim">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" name="descricao" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Imagens</label>
+                        <div class="image-upload">
+                            <div class="upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Arraste e solte as imagens aqui ou</p>
+                                <label for="upload-images" class="btn-secondary">Selecionar Arquivos</label>
+                                <input type="file" id="upload-images" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <div class="image-preview" id="image-preview">
+                                <!-- Previews serão adicionados aqui -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn-secondary">Limpar</button>
+                        <button type="submit" class="btn-primary">Salvar Imóvel</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Editar Biografia -->
+            <section id="biografia" class="admin-section">
+                <h2>Editar Biografia</h2>
+                <form id="form-biografia" class="admin-form">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" value="Phelippe Fernandes" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="creci">CRECI</label>
+                        <input type="text" id="creci" name="creci" value="301924F" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Biografia</label>
+                        <textarea id="bio" name="bio" rows="6" required>Especialista em imóveis de alto padrão em Indaiatuba, com ampla experiência no mercado imobiliário local. Ofereço um atendimento personalizado e exclusivo para clientes que buscam propriedades premium.
+
+Trabalho com compra, venda, aluguel e administração de imóveis, sempre priorizando a satisfação dos clientes e a excelência no atendimento.
+
+Meu compromisso é encontrar o imóvel perfeito para você e sua família, ou garantir a melhor negociação para seu patrimônio.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Foto de Perfil</label>
+                        <div class="profile-image">
+                            <img src="img/corretor_bio.jpg" alt="Phelippe Fernandes" id="preview-profile">
+                            <div class="profile-actions">
+                                <label for="upload-profile" class="btn-secondary">Alterar Foto</label>
+                                <input type="file" id="upload-profile" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="reset" class="btn-secondary">Cancelar</button>
+                        <button type="submit" class="btn-primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Mensagens -->
+            <section id="mensagens" class="admin-section">
+                <h2>Mensagens Recebidas</h2>
+                <div class="mensagens-container">
+                    <div class="mensagens-lista">
+                        <div class="mensagem-item unread">
+                            <div class="mensagem-info">
+                                <h3>João Silva</h3>
+                                <p>Olá, tenho interesse no imóvel do Jardim Esplanada...</p>
+                                <span class="mensagem-data">Hoje, 09:15</span>
+                            </div>
+                            <div class="mensagem-actions">
+                                <button class="btn-view"><i class="fas fa-eye"></i></button>
+                                <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="mensagem-item">
+                            <div class="mensagem-info">
+                                <h3>Maria Oliveira</h3>
+                                <p>Gostaria de agendar uma visita ao imóvel código 49284...</p>
+                                <span class="mensagem-data">Ontem, 15:30</span>
+                            </div>
+                            <div class="mensagem-actions">
+                                <button class="btn-view"><i class="fas fa-eye"></i></button>
+                                <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="mensagem-item">
+                            <div class="mensagem-info">
+                                <h3>Carlos Santos</h3>
+                                <p>Preciso de informações sobre financiamento para o imóvel...</p>
+                                <span class="mensagem-data">02/06/2025, 14:20</span>
+                            </div>
+                            <div class="mensagem-actions">
+                                <button class="btn-view"><i class="fas fa-eye"></i></button>
+                                <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mensagem-detalhes">
+                        <div class="mensagem-header">
+                            <h3>João Silva</h3>
+                            <span>joao.silva@email.com | (19) 98765-4321</span>
+                            <span class="mensagem-data">Hoje, 09:15</span>
+                        </div>
+                        <div class="mensagem-corpo">
+                            <p>Olá, tenho interesse no imóvel do Jardim Esplanada, código 49284.</p>
+                            <p>Gostaria de saber se é possível agendar uma visita para este final de semana e se o valor é negociável.</p>
+                            <p>Também tenho interesse em saber sobre as condições de financiamento.</p>
+                            <p>Aguardo retorno.</p>
+                            <p>Atenciosamente,<br>João Silva</p>
+                        </div>
+                        <div class="mensagem-resposta">
+                            <textarea placeholder="Escreva sua resposta..."></textarea>
+                            <button class="btn-primary">Responder</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content login-content">
+            <div class="login-header">
+                <h2>Área Administrativa</h2>
+                <p>Digite suas credenciais para acessar</p>
+            </div>
+            <form id="form-login" class="login-form">
+                <div class="form-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" name="senha" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
